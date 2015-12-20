@@ -3,7 +3,7 @@
 Copy the script `bin/git-up` into your executable folder (like `/usr/local/bin` or `$HOME/bin`).
 
 ```bash
-sudo curl -sLo /usr/local/bin/git-up https://github.com/mauchede/git-up/raw/master/bin/git-up
+sudo curl -sLo /usr/local/bin/git-up https://github.com/timonier/git-up/raw/master/bin/git-up
 sudo chmod +x /usr/local/bin/git-up
 ```
 
@@ -19,7 +19,7 @@ git up
 # unstashing
 ```
 
-__Note__: By default, the version `0.5.12` will be used. To change the version, define the `TAG` before the command. For example:
+__Note__: By default, the version `0.5.12` will be used. To change the version, define the `TAG` before the command:
 
 ```bash
 TAG="latest" git up -v
@@ -36,4 +36,4 @@ TAG="latest" git up -v
 ### Links
 
 * [git-up](https://github.com/aanand/git-up)
-* [image "mauchede/git-up"](https://hub.docker.com/r/mauchede/git-up/)
+* [image "timonier/git-up"](https://hub.docker.com/r/timonier/git-up/)
