@@ -7,6 +7,12 @@ sudo curl -sLo /usr/local/bin/git-up https://github.com/timonier/git-up/raw/mast
 sudo chmod +x /usr/local/bin/git-up
 ```
 
+Linux users can use the [installer](https://github.com/timonier/git-up/blob/master/bin/installer):
+
+```bash
+curl -sSL https://github.com/timonier/git-up/raw/master/bin/installer | sudo bash -s install
+```
+
 ### Usage
 
 Run the command `git-up` or `git up`:
