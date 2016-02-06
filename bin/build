@@ -1,9 +1,4 @@
 #!/bin/bash
-set -e
 cd "`dirname "$0"`/../src"
 
-IMAGE=${IMAGE:-timonier/git-up}
-TAG=${TAG:-0.5.12}
-
-docker rmi $IMAGE:$TAG || :
-docker build -t $IMAGE:$TAG .
+docker build -t ${IMAGE:-timonier/git-up}:${TAG:-0.5.12} .

@@ -1,19 +1,19 @@
-### Installation
+# Installation
 
 Copy the script `bin/git-up` into your executable folder (like `/usr/local/bin` or `$HOME/bin`).
 
 ```bash
-sudo curl -sLo /usr/local/bin/git-up https://github.com/timonier/git-up/raw/master/bin/git-up
+sudo curl -sLo /usr/local/bin/git-up "https://github.com/timonier/git-up/raw/master/bin/git-up"
 sudo chmod +x /usr/local/bin/git-up
 ```
 
 Linux users can use the [installer](https://github.com/timonier/git-up/blob/master/bin/installer):
 
 ```bash
-curl -sSL https://github.com/timonier/git-up/raw/master/bin/installer | sudo bash -s install
+curl -sL "https://github.com/timonier/git-up/raw/master/bin/installer" | sudo bash -s install
 ```
 
-### Usage
+# Usage
 
 Run the command `git-up` or `git up`:
 
@@ -28,10 +28,14 @@ git up
 __Note__: By default, the version `0.5.12` will be used. To change the version, define the `TAG` before the command:
 
 ```bash
-TAG="latest" git up -v
+git-up -v
+# git-up 0.5.12
+
+TAG="..." git-up -v
+# ...
 ```
 
-### Contributing
+# Contributing
 
 1. Fork it.
 2. Create your branch: `git checkout -b my-new-feature`.
@@ -39,7 +43,7 @@ TAG="latest" git up -v
 4. Push to the branch: `git push origin my-new-feature`.
 5. Submit a pull request.
 
-### Links
+# Links
 
 * [git-up](https://github.com/aanand/git-up)
 * [image "timonier/git-up"](https://hub.docker.com/r/timonier/git-up/)

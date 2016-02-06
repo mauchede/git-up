@@ -1,4 +1,5 @@
 #!/bin/bash
+set -x
 
 fail() {
     echo $1 1>&2
@@ -12,7 +13,7 @@ fail() {
 
 case $1 in
     install )
-        curl -sLo /usr/local/bin/git-up https://github.com/timonier/git-up/raw/master/bin/git-up
+        curl -sLo /usr/local/bin/git-up "https://github.com/timonier/git-up/raw/master/bin/git-up"
         chmod +x /usr/local/bin/git-up
     ;;
 
