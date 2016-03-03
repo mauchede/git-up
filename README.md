@@ -2,22 +2,22 @@
 
 Copy the script `bin/git-up` into your executable folder (like `/usr/local/bin` or `$HOME/bin`).
 
-```bash
+```sh
 sudo curl -sLo /usr/local/bin/git-up "https://github.com/timonier/git-up/raw/master/bin/git-up"
 sudo chmod +x /usr/local/bin/git-up
 ```
 
 Linux users can use the [installer](https://github.com/timonier/git-up/blob/master/bin/installer):
 
-```bash
-curl -sL "https://github.com/timonier/git-up/raw/master/bin/installer" | sudo bash -s install
+```sh
+curl -sL "https://github.com/timonier/git-up/raw/master/bin/installer" | sudo sh -s install
 ```
 
 # Usage
 
 Run the command `git-up` or `git up`:
 
-```bash
+```sh
 git up
 # Fetching origin
 # stashing 1 changes
@@ -27,7 +27,7 @@ git up
 
 __Note__: By default, the version `0.5.12` will be used. To change the version, define the `TAG` before the command:
 
-```bash
+```sh
 git-up -v
 # git-up 0.5.12
 
