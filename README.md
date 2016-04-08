@@ -43,6 +43,8 @@ TAG="..." git-up -v
 4. Push to the branch: `git push origin my-new-feature`.
 5. Submit a pull request.
 
+__Note__: Use the script `bin/build` to test your modifications locally.
+
 # Links
 
 * [git-up](https://github.com/aanand/git-up)

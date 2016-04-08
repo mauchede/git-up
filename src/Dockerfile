@@ -16,12 +16,12 @@ RUN set -x \
     && BUILD_DEPS="build-essential ruby ruby-dev" \
 
     && apt-get install -y --no-install-recommends \
-        $BUILD_DEPS \
-        git \
-        openssh-client \
-        ruby2.1 \
+           $BUILD_DEPS \
+           git \
+           openssh-client \
+           ruby2.1 \
 
-    && gem install --no-ri --no-rdoc \
+    && gem install -V --no-ri --no-rdoc \
            git-up:$GIT_UP_VERSION \
 
     # Clean
