@@ -2,12 +2,13 @@ FROM debian:jessie
 MAINTAINER Morgan Auchede <morgan.auchede@gmail.com>
 
 ENV \
-    DEBIAN_FRONTEND=noninteractive \
     GIT_UP_VERSION=0.5.12
 
 RUN set -x \
 
     # Prepare system
+
+    && export DEBIAN_FRONTEND=noninteractive \
 
     && apt-get update \
 
