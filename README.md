@@ -1,6 +1,10 @@
-# Installation
+# README
 
-Copy the script `bin/git-up` into your executable folder (like `/usr/local/bin` or `$HOME/bin`).
+Fetch and rebase all locally-tracked remote branches
+
+## Installation
+
+Copy the script `bin/git-up` into your executable folder (like `/usr/local/bin` or `$HOME/bin`):
 
 ```sh
 sudo curl -sLo /usr/local/bin/git-up "https://github.com/timonier/git-up/raw/master/bin/git-up"
@@ -13,7 +17,7 @@ Linux users can use the [installer](https://github.com/timonier/git-up/blob/mast
 curl -sL "https://github.com/timonier/git-up/raw/master/bin/installer" | sudo sh -s install
 ```
 
-# Usage
+## Usage
 
 Run the command `git-up` or `git up`:
 
@@ -35,7 +39,7 @@ TAG="..." git-up -v
 # ...
 ```
 
-# Contributing
+## Contributing
 
 1. Fork it.
 2. Create your branch: `git checkout -b my-new-feature`.
@@ -45,7 +49,8 @@ TAG="..." git-up -v
 
 __Note__: Use the script `bin/build` to test your modifications locally.
 
-# Links
+## Links
 
 * [git-up](https://github.com/aanand/git-up)
 * [image "timonier/git-up"](https://hub.docker.com/r/timonier/git-up/)
+* [timonier/dumb-entrypoint](https://github.com/timonier/dumb-entrypoint)
