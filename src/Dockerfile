@@ -1,45 +1,41 @@
-FROM debian:jessie-slim
+FROM python:alpine
 
 LABEL \
     maintainer="Morgan Auchede <morgan.auchede@gmail.com>"
 
 ENV \
-    GIT_UP_VERSION=0.5.12
+    GIT_UP_VERSION=latest
 
-RUN set -x \
-
-    # Prepare system
-
-    && export DEBIAN_FRONTEND=noninteractive \
-
-    && apt-get update \
+RUN set -eux \
 
     # Install packages
 
-    && BUILD_DEPS="build-essential curl ruby ruby-dev" \
+    && apk add --no-cache --no-progress --virtual BUILD_DEPS \
+           curl \
 
-    && apt-get install -y --no-install-recommends \
-           ${BUILD_DEPS} \
+    && apk add --no-cache --no-progress \
            ca-certificates \
            git \
            openssh-client \
-           ruby2.1 \
 
-    && gem install -V --no-ri --no-rdoc \
-           git-up:${GIT_UP_VERSION} \
+    # Install dumb-entrypoint
 
-    # Install timonier/dumb-entrypoint
+    && curl --location "https://github.com/timonier/dumb-entrypoint/raw/master/bin/installer" | INSTALL_DIRECTORY="/usr/sbin" sh -s install \
 
-    && curl -sL "https://github.com/timonier/dumb-entrypoint/raw/master/bin/installer" | INSTALL_DIRECTORY="/usr/sbin" sh -s install \
+    # Install git-up
+
+    && export $(curl "https://raw.githubusercontent.com/timonier/version-lister/release/generated/git-up/${GIT_UP_VERSION}" | xargs) \
+
+    && pip install \
+           "git-up==${GIT_UP_VERSION}" \
 
     # Clean
 
-    && apt-get remove -y --purge \
-           ${BUILD_DEPS} \
-    && apt-get autoremove -y --purge \
+    && apk del --no-progress \
+          BUILD_DEPS \
 
-    && rm -rf \
-           /root/.gem \
-           /var/lib/apt/lists/*
+    && rm -f -r \
+          /root/.cache \
+          /tmp/*
 
 ENTRYPOINT [ "dumb-init" , "--" , "dumb-entrypoint" ]
