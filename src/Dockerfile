@@ -6,7 +6,7 @@ LABEL \
 ENV \
     GIT_UP_VERSION=latest
 
-RUN set -eux \
+RUN set -ex \
 
     # Install packages
 
@@ -18,16 +18,18 @@ RUN set -eux \
            git \
            openssh-client \
 
-    # Install dumb-entrypoint
-
-    && curl --location "https://github.com/timonier/dumb-entrypoint/raw/master/bin/installer" | INSTALL_DIRECTORY="/usr/sbin" sh -s install \
-
-    # Install git-up
+    # Install msiemens/PyGitUp
 
     && export $(curl "https://raw.githubusercontent.com/timonier/version-lister/release/generated/git-up/${GIT_UP_VERSION}" | xargs) \
 
     && pip install \
            "git-up==${GIT_UP_VERSION}" \
+
+    # Install timonier/dumb-entrypoint
+
+    && curl --location "https://github.com/timonier/dumb-entrypoint/raw/master/src/dumb-entrypoint/installer" | INSTALL_DIRECTORY="/usr/sbin" sh -s -- install \
+    && curl --location "https://github.com/timonier/dumb-entrypoint/raw/master/src/dumb-init/installer" | INSTALL_DIRECTORY="/usr/sbin" sh -s -- install \
+    && curl --location "https://github.com/timonier/dumb-entrypoint/raw/master/src/gosu/installer" | INSTALL_DIRECTORY="/usr/sbin" sh -s -- install \
 
     # Clean
 
