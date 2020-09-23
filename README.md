@@ -2,6 +2,8 @@
 
 Fetch and rebase all locally-tracked remote branches
 
+⚠️ This project is no longer maintained. ⚠️
+
 ## Installation
 
 Copy `bin/git-up` into your executable folder (like `/usr/local/bin` or `$HOME/bin`):
@@ -34,16 +36,6 @@ git-up
 # master                                         up to date
 # release/1.1.0                                  up to date
 ```
-
-## Contributing
-
-1. Fork it.
-2. Create your branch: `git checkout -b my-new-feature`.
-3. Commit your changes: `git commit -am 'Add some feature'`.
-4. Push to the branch: `git push origin my-new-feature`.
-5. Submit a pull request.
-
-__Note__: Use the script `bin/build` to test your modifications locally.
 
 ## Links
 
